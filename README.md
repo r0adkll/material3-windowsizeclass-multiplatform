@@ -1,4 +1,8 @@
-# Deprecated
+# FORKED
+
+This library is forked to add support for web/desktop size classes that neither the original or included KMP library have
+
+## Deprecated
 
 This library is now deprecated, as JetBrains have released their own version as part of [Compose Multiplatform 1.7.0](https://www.jetbrains.com/help/kotlin-multiplatform-dev/whats-new-compose-170.html#material3-material3-window-size-class). See the [tracking issue](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/issues/100) for more info.
 
@@ -38,7 +42,7 @@ fun MyApplication() {
         else -> 30.sp
     }
 
-    Column( /* ... */) {  
+    Column( /* ... */) {
         Box (/* ... */){
             Image (/* ... */)
             Text (fontSize = fontSize)
@@ -66,7 +70,7 @@ val commonMain by getting {
 ```
 Copyright 2022 The Android Open Source Project
 Portions 2023 Christopher Banes
- 
+
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
