@@ -131,6 +131,8 @@ value class WindowWidthSizeClass private constructor(private val value: Int) :
             Compact -> "Compact"
             Medium -> "Medium"
             Expanded -> "Expanded"
+            Large -> "Large"
+            ExtraLarge -> "ExtraLarge"
             else -> ""
         }
     }
@@ -152,10 +154,20 @@ value class WindowWidthSizeClass private constructor(private val value: Int) :
         val Expanded = WindowWidthSizeClass(2)
 
         /**
+         * Represents Desktop and Web display sizes
+         */
+        val Large = WindowWidthSizeClass(3)
+
+        /**
+         * Represents Ultra-wide Desktop and Web display sizes
+         */
+        val ExtraLarge = WindowWidthSizeClass(4)
+
+        /**
          * The default set of size classes that includes [Compact], [Medium], and [Expanded] size
          * classes. Should never expand to ensure behavioral consistency.
          */
-        val DefaultSizeClasses = setOf(Compact, Medium, Expanded)
+        val DefaultSizeClasses = setOf(Compact, Medium, Expanded, Large, ExtraLarge)
 
         /**
          * The standard set of size classes. It's supposed to include all size classes and will be
@@ -176,6 +188,8 @@ value class WindowWidthSizeClass private constructor(private val value: Int) :
 
         private fun WindowWidthSizeClass.breakpoint(): Dp {
             return when {
+                this == ExtraLarge -> 1600.dp
+                this == Large -> 1200.dp
                 this == Expanded -> 840.dp
                 this == Medium -> 600.dp
                 else -> 0.dp

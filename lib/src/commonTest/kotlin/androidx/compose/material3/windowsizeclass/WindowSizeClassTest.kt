@@ -86,6 +86,12 @@ class WindowSizeClassTest {
 
         assertThat(WindowWidthSizeClass.fromWidth(840.dp)).isEqualTo(WindowWidthSizeClass.Expanded)
         assertThat(WindowWidthSizeClass.fromWidth(1000.dp)).isEqualTo(WindowWidthSizeClass.Expanded)
+
+        assertThat(WindowWidthSizeClass.fromWidth(1200.dp)).isEqualTo(WindowWidthSizeClass.Large)
+        assertThat(WindowWidthSizeClass.fromWidth(1599.dp)).isEqualTo(WindowWidthSizeClass.Large)
+
+        assertThat(WindowWidthSizeClass.fromWidth(1600.dp)).isEqualTo(WindowWidthSizeClass.ExtraLarge)
+        assertThat(WindowWidthSizeClass.fromWidth(2000.dp)).isEqualTo(WindowWidthSizeClass.ExtraLarge)
     }
 
     @Test
@@ -114,6 +120,12 @@ class WindowSizeClassTest {
 
         assertWidthClass(WindowWidthSizeClass.Expanded, 840F)
         assertWidthClass(WindowWidthSizeClass.Expanded, 1000F)
+
+        assertWidthClass(WindowWidthSizeClass.Large, 1200F)
+        assertWidthClass(WindowWidthSizeClass.Large, 1599F)
+
+        assertWidthClass(WindowWidthSizeClass.ExtraLarge, 1600F)
+        assertWidthClass(WindowWidthSizeClass.ExtraLarge, 2000F)
     }
 
     @Test
@@ -140,6 +152,12 @@ class WindowSizeClassTest {
 
         assertWidthClass(WindowWidthSizeClass.Expanded, 1680F, mockDensity)
         assertWidthClass(WindowWidthSizeClass.Expanded, 2000F, mockDensity)
+
+        assertWidthClass(WindowWidthSizeClass.Large, 2400F, mockDensity)
+        assertWidthClass(WindowWidthSizeClass.Large, 3198F, mockDensity)
+
+        assertWidthClass(WindowWidthSizeClass.ExtraLarge, 3200F, mockDensity)
+        assertWidthClass(WindowWidthSizeClass.ExtraLarge, 4000F, mockDensity)
     }
 
     @Test
@@ -230,6 +248,10 @@ class WindowSizeClassTest {
             .isEqualTo("WindowWidthSizeClass.Medium")
         assertThat(WindowWidthSizeClass.Expanded.toString())
             .isEqualTo("WindowWidthSizeClass.Expanded")
+        assertThat(WindowWidthSizeClass.Large.toString())
+            .isEqualTo("WindowWidthSizeClass.Large")
+        assertThat(WindowWidthSizeClass.ExtraLarge.toString())
+            .isEqualTo("WindowWidthSizeClass.ExtraLarge")
     }
 
     @Test
@@ -248,14 +270,19 @@ class WindowSizeClassTest {
         assertThat(WindowWidthSizeClass.Compact < WindowWidthSizeClass.Medium).isTrue()
         assertThat(WindowWidthSizeClass.Compact < WindowWidthSizeClass.Expanded).isTrue()
         assertThat(WindowWidthSizeClass.Medium < WindowWidthSizeClass.Expanded).isTrue()
+        assertThat(WindowWidthSizeClass.Expanded < WindowWidthSizeClass.Large).isTrue()
+        assertThat(WindowWidthSizeClass.Large < WindowWidthSizeClass.ExtraLarge).isTrue()
 
         assertThat(WindowWidthSizeClass.Compact < WindowWidthSizeClass.Compact).isFalse()
         assertThat(WindowWidthSizeClass.Medium < WindowWidthSizeClass.Medium).isFalse()
         assertThat(WindowWidthSizeClass.Expanded < WindowWidthSizeClass.Expanded).isFalse()
+        assertThat(WindowWidthSizeClass.Large < WindowWidthSizeClass.Large).isFalse()
+        assertThat(WindowWidthSizeClass.ExtraLarge < WindowWidthSizeClass.ExtraLarge).isFalse()
 
         assertThat(WindowWidthSizeClass.Expanded < WindowWidthSizeClass.Medium).isFalse()
         assertThat(WindowWidthSizeClass.Expanded < WindowWidthSizeClass.Compact).isFalse()
         assertThat(WindowWidthSizeClass.Medium < WindowWidthSizeClass.Compact).isFalse()
+        assertThat(WindowWidthSizeClass.ExtraLarge < WindowWidthSizeClass.Large).isFalse()
 
         // Less than or equal to
         assertThat(WindowWidthSizeClass.Compact <= WindowWidthSizeClass.Compact).isTrue()
@@ -264,7 +291,11 @@ class WindowSizeClassTest {
         assertThat(WindowWidthSizeClass.Medium <= WindowWidthSizeClass.Medium).isTrue()
         assertThat(WindowWidthSizeClass.Medium <= WindowWidthSizeClass.Expanded).isTrue()
         assertThat(WindowWidthSizeClass.Expanded <= WindowWidthSizeClass.Expanded).isTrue()
+        assertThat(WindowWidthSizeClass.Expanded <= WindowWidthSizeClass.Large).isTrue()
+        assertThat(WindowWidthSizeClass.Large <= WindowWidthSizeClass.Large).isTrue()
 
+        assertThat(WindowWidthSizeClass.ExtraLarge <= WindowWidthSizeClass.Large).isFalse()
+        assertThat(WindowWidthSizeClass.Large <= WindowWidthSizeClass.Expanded).isFalse()
         assertThat(WindowWidthSizeClass.Expanded <= WindowWidthSizeClass.Medium).isFalse()
         assertThat(WindowWidthSizeClass.Expanded <= WindowWidthSizeClass.Compact).isFalse()
         assertThat(WindowWidthSizeClass.Medium <= WindowWidthSizeClass.Compact).isFalse()
