@@ -4,6 +4,8 @@ This repo is forked from https://github.com/chrisbanes/material3-windowsizeclass
 
 ## Installing
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.r0adkll.material3/material3-window-size-class-multiplatform)](https://search.maven.org/search?q=g:com.r0adkll.material3) ![Build status](https://github.com/r0adkll/material3-windowsizeclass-multiplatform/actions/workflows/build.yml/badge.svg)
+
 Installing this will consist of changing the maven library targets
 
 | From                     | To                    |

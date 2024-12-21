@@ -1,6 +1,7 @@
 # FORKED
 
-This library is forked to add support for web/desktop size classes that neither the original or included KMP library have
+This library is forked to add support for web/desktop size classes that neither the original or included KMP library have.
+Checkout [FORK.md](FORK.md)
 
 ## Deprecated
 
@@ -9,7 +10,7 @@ This library is now deprecated, as JetBrains have released their own version as 
 ---
 
 
-[![Maven Central](https://img.shields.io/maven-central/v/dev.chrisbanes.material3/material3-window-size-class-multiplatform)](https://search.maven.org/search?q=g:dev.chrisbanes.material3) ![Build status](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/actions/workflows/build.yml/badge.svg)
+[![Maven Central](https://img.shields.io/maven-central/v/com.r0adkll.material3/material3-window-size-class-multiplatform)](https://search.maven.org/search?q=g:com.r0adkll.material3) ![Build status](https://github.com/r0adkll/material3-windowsizeclass-multiplatform/actions/workflows/build.yml/badge.svg)
 
 ## Compose Multiplatform: Material 3 Window Size Class
 
