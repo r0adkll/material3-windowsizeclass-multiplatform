@@ -5,8 +5,9 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("jvm")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
 }
 
 dependencies {

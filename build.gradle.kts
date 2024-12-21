@@ -3,15 +3,17 @@
 
 
 plugins {
-    id("com.android.library") version "8.7.2" apply false
-    id("com.android.application") version "8.7.2" apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.application) apply false
 
-    kotlin("multiplatform") version "1.9.24" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
-    id("org.jetbrains.compose") version "1.6.10" apply false
+    alias(libs.plugins.compose.multiplatform) apply false
+    alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.multiplatform) apply false
 
-    id("com.diffplug.spotless") version "6.25.0"
-    id("com.vanniktech.maven.publish") version "0.28.0"
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.maven.publish)
 }
 
 allprojects {

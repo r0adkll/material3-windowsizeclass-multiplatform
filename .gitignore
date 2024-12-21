@@ -8,7 +8,7 @@ captures
 .externalNativeBuild
 .cxx
 local.properties
-
+.kotlin
 kotlin-js-store/
 
 #######################################################################################

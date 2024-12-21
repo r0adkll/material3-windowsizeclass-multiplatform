@@ -2,15 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
-    id("org.jetbrains.compose")
-    id("com.vanniktech.maven.publish")
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.maven.publish)
 }
 
 kotlin {
@@ -64,14 +65,14 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.window:window:1.3.0")
+                implementation(libs.androidx.window)
             }
         }
 
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("com.willowtreeapps.assertk:assertk:0.28.1")
+                implementation(libs.assertk)
             }
         }
     }

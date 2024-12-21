@@ -3,9 +3,10 @@
 
 
 plugins {
-    kotlin("android")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.compose.multiplatform)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -33,5 +34,5 @@ android {
 
 dependencies {
     implementation(project(":sample:shared"))
-    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation(libs.androidx.activity.compose)
 }
